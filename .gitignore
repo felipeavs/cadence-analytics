@@ -1,0 +1,36 @@
+# Ambiente
+.env
+venv/
+.venv/
+guides/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Garmin (tokens de autenticação salvos localmente)
+.garminconnect/
+
+# Logs
+*.log
+
+# Docker
+*.pid
+
+# Node (futuro frontend)
+node_modules/
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Dados locais de teste (não versionar dados reais/sintéticos)
+data/raw/
+data/processed/
+
