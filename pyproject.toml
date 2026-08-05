@@ -1,0 +1,20 @@
+[tool.semantic_release]
+version_variable = "VERSION"
+version_source = "tag"
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = false
+upload_to_pypi = false
+upload_to_release = true
+commit_message = "chore(release): {version} [skip ci]"
+
+[tool.semantic_release.changelog]
+changelog_sections = [
+    ["feat", "Features"],
+    ["fix", "Bug Fixes"],
+    ["chore", "Chores"],
+    ["refactor", "Code Refactoring"],
+    ["docs", "Documentation"],
+    ["test", "Tests"],
+    ["perf", "Performance Improvements"],
+]
