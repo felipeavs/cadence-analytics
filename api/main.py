@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 app = FastAPI(
-    title="Garmin Analytics API",
+    title="Cadence Analytics API",
     version="0.1.0",
     description="API do pipeline de análise de dados de saúde e exercício.",
 )
