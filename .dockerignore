@@ -1,0 +1,47 @@
+# Virtual env
+.venv/
+venv/
+env/
+
+# Git
+.git/
+.gitignore
+.github/
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# local config
+.env
+.garminconnect/
+
+# Doc
+docs/
+guides/
+README.md
+CHANGELOG.md
+
+# local data
+data/
+*.csv
+*.json.gz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Docker
+docker-compose.yml
+.dockerignore
+Dockerfile*
