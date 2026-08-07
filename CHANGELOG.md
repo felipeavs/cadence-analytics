@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 <!-- version list -->
 
+## v0.2.1 (2026-08-07)
+
+### Bug Fixes
+
+- Fix __version__.py format
+  ([`c4f7f14`](https://github.com/felipeavs/cadence-analytics/commit/c4f7f1445d91c61b5cb39e19cea36f3e192eea32))
+
+
 ## v0.2.0 (2026-08-07)
 
 ### Bug Fixes
