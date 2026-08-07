@@ -12,6 +12,8 @@ I train regularly and track my activity with a Garmin device, but the data ends 
 
 Cadence Analytics is my attempt to solve that. It ingests health data from Garmin Connect, merges it with manually tracked workouts, stores everything in a dimensional model, and exposes it through an API and an analysis dashboard.
 
+A longer-term goal is to enrich the collected metrics with context from scientific literature, using retrieval-augmented generation (RAG) over research papers on sleep, recovery and training — so the data can answer not only *how am I doing*, but *what does this actually mean*.
+
 The project also serves a second purpose: it is my hands-on portfolio for the transition from backend engineering into data engineering. Because a single user does not generate enough volume to justify distributed processing, the pipeline also includes a synthetic data generator that simulates hundreds of users — which makes the use of tools like Kafka and Spark meaningful rather than decorative.
 
 ## Architecture
@@ -24,7 +26,7 @@ _(Diagram coming soon — the pipeline currently covers the API and storage laye
 
 - Python 3.12
 - FastAPI (REST API)
-- PostgreSQL 16
+- PostgreSQL 16 (with pgvector extension)
 - Docker / Docker Compose
 - GitHub Actions (CI + automated releases)
 - pytest
@@ -38,6 +40,7 @@ _(Diagram coming soon — the pipeline currently covers the API and storage laye
 - AWS (S3, EMR)
 - Kubernetes (deployment study)
 - React or Streamlit (dashboard)
+- pgvector + LLM integration (RAG over scientific literature)
 
 ## Running locally
 
@@ -117,6 +120,7 @@ _(To be documented once authentication is implemented — planned: JWT-based aut
 | 7 | Analysis dashboard | ⏳ Planned |
 | 8 | Airflow orchestration | ⏳ Planned |
 | 9 | Kubernetes deployment | ⏳ Planned |
+| 10 | RAG over scientific literature (pgvector) | ⏳ Planned |
 
 ## License
 
