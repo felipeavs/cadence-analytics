@@ -8,3 +8,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 > Starting from the first release, this file will be automatically updated
 > by `python-semantic-release` on every push to the `main` branch, based on
 > commit messages (Conventional Commits).
+
+<!-- version list -->
