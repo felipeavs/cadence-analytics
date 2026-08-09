@@ -8,9 +8,14 @@
 $ErrorActionPreference = 'Stop'
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $venvPath = Join-Path $scriptRoot '../.venv'
-$requirementsPath = Join-Path $scriptRoot '../requirements.txt'
+$rootRequirementsPath = Join-Path $scriptRoot '../requirements.txt'
+$requirementsPaths = @(
+    $rootRequirementsPath,
+    (Join-Path $scriptRoot '../api/requirements.txt'),
+    (Join-Path $scriptRoot '../consumer/requirements.txt')
+)
 
-if (-not (Test-Path $requirementsPath)) {
+if (-not (Test-Path $rootRequirementsPath)) {
     Write-Error "requirements.txt not found in '$scriptRoot'."
     return
 }
@@ -40,7 +45,18 @@ Write-Host 'Activating virtual environment...'
 Write-Host 'Updating pip...'
 python -m pip install --upgrade pip
 
-Write-Host 'Installing dependencies from requirements.txt...'
-python -m pip install -r $requirementsPath
+foreach ($requirementsPath in $requirementsPaths) {
+    if (-not (Test-Path $requirementsPath)) {
+        Write-Host "Skipping missing requirements file: $requirementsPath"
+        continue
+    }
+
+    Write-Host "Installing dependencies from $(Split-Path -Leaf $requirementsPath)..."
+    python -m pip install -r $requirementsPath
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Failed to install dependencies from '$requirementsPath'."
+        return
+    }
+}
 
 Write-Host 'Setup complete. The venv is activated in this PowerShell session.'
