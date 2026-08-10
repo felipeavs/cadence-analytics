@@ -1,4 +1,4 @@
-# ADR 002: Use psycopg (v3) as the PostgreSQL driver
+# Decision 001: Use psycopg (v3) as the PostgreSQL driver
 
 **Status:** Accepted
 **Date:** 2026-08-07
