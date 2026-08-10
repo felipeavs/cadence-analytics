@@ -34,3 +34,9 @@ dist/
 data/raw/
 data/processed/
 
+<<<<<<< Updated upstream
+=======
+docs/adr/pt-br/
+docs/decisions/pt-br/
+
+>>>>>>> Stashed changes
